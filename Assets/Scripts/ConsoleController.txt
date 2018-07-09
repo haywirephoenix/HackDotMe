@@ -1,0 +1,59 @@
+public class Console : MonoBehaviour {
+
+public EventSystem eventSystem;
+public GameObject Log;
+public GameObject Input;
+public InputField inputField;
+public Text DirText;
+public Text LogText;
+
+
+// Use this for initialization
+void Start () {
+
+CheckLogEmpty();
+
+
+}
+
+private void CheckLogEmpty(){
+
+if(LogText.text.Length == 0){
+LogText.enabled = false;
+}else{
+LogText.enabled = true;
+}
+}
+
+public void Echo(){
+
+
+LogText.enabled = true;
+string newMessage = DirText.text + inputField.text;
+string msgText = LogText.text;
+
+
+if (msgText != "")
+msgText += "\n";
+
+msgText += newMessage;
+
+
+LogText.text = msgText;
+inputField.text = "";
+
+inputField.Select();
+
+
+
+EventSystem.current.SetSelectedGameObject(inputField.gameObject, null);
+inputField.OnPointerClick(new PointerEventData(EventSystem.current));
+
+
+}
+
+// Update is called once per frame
+void Update () {
+
+}
+}*/
