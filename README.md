@@ -1,3 +1,3 @@
 # HackDotMe
 
-A terminal-based hacking game.
+A terminal-based muliplayer hacking game.
